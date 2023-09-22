@@ -1,0 +1,9 @@
+#map {
+    height: 350px;
+}
+
+.iss-icon {
+    width: 12px;
+    height: 12px;
+    background-color: blue;
+}
