@@ -1,0 +1,16 @@
+.astronaut-page {
+    background-color: rgb(94, 94, 255);
+    padding: 36px;
+}
+
+.astro-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    gap: 12px;
+}
+
+.astro-row {
+    display: grid;
+    grid-template-columns: 160px 160px;
+}

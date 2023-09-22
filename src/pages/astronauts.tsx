@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import "./astronauts.css";
 
 const PEOPLE_IN_SPACE_API = "http://api.open-notify.org/astros.json"
 
@@ -40,18 +41,20 @@ export default function Astronauts() {
     }, []);
 
     return (
-        <div>
-            astronauts page
+        <div className="astronaut-page">
+            Astronauts in Space
 
             {loading && "loading..."}
-            {!loading && <p>There are {numAstronauts} astronauts in space right now</p>}
-            {astronauts.map((astronaut: AstronautData) => 
-            <>
-            <div>{astronaut.name}</div>
-            <div>{astronaut.craft}</div>
-            </>
+            {!loading && <p>There are {numAstronauts} astronauts in space right now!</p>}
+            <div className="astro-wrapper">
+                {astronauts.map((astronaut: AstronautData) => 
+                    <div className="astro-row">
+                        <div className="astro-name">{astronaut.name}</div>
+                        <div className="astro-craft">{astronaut.craft}</div>
+                    </div>
 
-            )}
+                )}
+            </div>
         </div>
     )
 }
