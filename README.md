@@ -1,6 +1,43 @@
-# Getting Started with Create React App
+# Pryon Takehome 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Installation & Run Steps
+(prereqs: node installed on the machine)
+```bash
+npm install
+```
+run using
+```bash
+npm run
+```
+
+then open http://localhost:3000 if it's not already open
+
+# Deliverable
+
+* Unauthenticated users are directed to a login page that welcomes them to the application and implements a 3rd party Single Sign On authentication of choice (Google, Facebook, LinkedIn, Twitter, Firebase, etc) -OR- implement a local login with a fixed username and password.
+* Unauthenticated users trying to access any other resources are redirected to a login page.
+* Once authenticated, user lands on a main page that welcomes them with some personal info found in their login info (firstname in access_token for SSO, username for local login).  ie. “Hi Username!”.
+* Once authenticated, the UI includes a menu containing the four following options (your choice of design -- top menu, side menu, hamburger popup menu)
+    * “Profile” - redirects them to their welcome page with profile information.
+    * “Astronauts” - A page retrieves the current astronauts in space available at the URL.  It should display a table with two columns containing the data for the “Astronaut Name” and the “Craft” they are located on.
+    * API documentation for People in Space (http://open-notify.org/Open-Notify-API/People-In-Space) 
+    * “ISS Location” - A page with a map showing the current position of the International Space Station.
+    * API documentation for “ISS Current Location” (http://open-notify.org/Open-Notify-API/ISS-Location-Now/)
+    * Example of the API usage: (http://open-notify.org/Open-Notify-API/)
+    * “Logout” - logs the user out and redirects them back to the login page.
+
+# Rules
+
+* Must be implemented in React.js/Node.js as the core framework.  Any other UI libraries of choice are welcome (bootstrap, chart.js, etc).
+* Web-only is required, no need to build multi-platform/mobile/etc.
+* Feel free to begin with any Node.js baseline project, a template, or open source project of choice.
+* Single Page or Multi Page applications acceptable.
+* No database is required.  Any page data can be hardcoded in the page or local configuration files.
+* Minimal test framework put in place to illustrate testing methodology.
+* Source code delivered ahead of review by email or public repository.
+* Source project must be able to be run with your supplied list of requirements or setup instructions.
+
+(rest is the create react app boilerplate)
 
 ## Available Scripts
 
@@ -28,19 +65,3 @@ The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
