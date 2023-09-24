@@ -10,7 +10,7 @@ export interface UserData {
 
 export interface AuthContextT {
     user: UserData,
-    userLogin: (u: string, p: string) => void;
+    userLogin: (u: string, p: string) => boolean;
     userLogout: () => void;
 }
 
@@ -37,13 +37,20 @@ export const  AuthProvider = (): JSX.Element => {
         }
     }, [])
 
-    const userLogin = (username: string, password: string) => {
+    const userLogin = (username: string, password: string): boolean => {
         // This is where we could validate on the backend, but for this demo we can fake it
-        const userData = {
-            name: username
-        };
-        window.localStorage.setItem(USER_LOCALSTORAGE_KEY, JSON.stringify(userData));
-        setUserData(userData)
+        if (username == "pryon" && password == "pryoff") {
+            const userData = {
+                name: username,
+            };
+
+            window.localStorage.setItem(USER_LOCALSTORAGE_KEY, JSON.stringify(userData));
+            setUserData(userData)
+
+            return true;
+        } 
+
+        return false;
     };
 
     const userLogout = () => {

@@ -1,5 +1,4 @@
 .astronaut-page {
-    background-color: rgb(94, 94, 255);
     padding: 36px;
 }
 
@@ -13,4 +12,8 @@
 .astro-row {
     display: grid;
     grid-template-columns: 160px 160px;
+}
+
+.astro-craft {
+    font-style: italic;
 }
