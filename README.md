@@ -12,6 +12,10 @@ npm run
 
 then open http://localhost:3000 if it's not already open
 
+username: `pryon`
+password: `pryoff`
+
+
 # Deliverable
 
 * Unauthenticated users are directed to a login page that welcomes them to the application and implements a 3rd party Single Sign On authentication of choice (Google, Facebook, LinkedIn, Twitter, Firebase, etc) -OR- implement a local login with a fixed username and password.

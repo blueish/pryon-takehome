@@ -35,11 +35,11 @@ export const  AuthProvider = (): JSX.Element => {
                 setUserData(parsed)
             }
         }
-    }, [])
+    }, [user])
 
     const userLogin = (username: string, password: string): boolean => {
         // This is where we could validate on the backend, but for this demo we can fake it
-        if (username == "pryon" && password == "pryoff") {
+        if (username === "pryon" && password === "pryoff") {
             const userData = {
                 name: username,
             };

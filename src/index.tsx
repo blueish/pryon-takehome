@@ -1,7 +1,6 @@
 import React, { useContext } from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { RouterProvider, createBrowserRouter, Navigate, createRoutesFromElements, Route } from 'react-router-dom';
 import Login from './pages/login';
@@ -50,7 +49,7 @@ const router = createBrowserRouter([
             element: <ProtectedByLogin><Astronauts /></ProtectedByLogin>,
           },
           {
-            path: "/Profile",
+            path: "/profile",
             element: <ProtectedByLogin><Profile /></ProtectedByLogin>,
           },
         ]

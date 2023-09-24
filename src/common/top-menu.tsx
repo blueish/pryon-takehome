@@ -27,7 +27,7 @@ export function TopMenu() {
 
     return (
         <div>
-            <header>
+            <header className="top-bar">
                 <nav className="top-bar">
                     {availableLinks.map((ele) =>
                         <div className="bar-link">
