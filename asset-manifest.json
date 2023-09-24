@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/pyron-takehome/static/css/main.9dc5e0a4.css",
-    "main.js": "/pyron-takehome/static/js/main.bf63ac9c.js",
-    "static/js/787.2d301262.chunk.js": "/pyron-takehome/static/js/787.2d301262.chunk.js",
-    "index.html": "/pyron-takehome/index.html",
-    "main.9dc5e0a4.css.map": "/pyron-takehome/static/css/main.9dc5e0a4.css.map",
-    "main.bf63ac9c.js.map": "/pyron-takehome/static/js/main.bf63ac9c.js.map",
-    "787.2d301262.chunk.js.map": "/pyron-takehome/static/js/787.2d301262.chunk.js.map"
+    "main.css": "/pryon-takehome/static/css/main.9dc5e0a4.css",
+    "main.js": "/pryon-takehome/static/js/main.1f1efed6.js",
+    "static/js/787.2d301262.chunk.js": "/pryon-takehome/static/js/787.2d301262.chunk.js",
+    "index.html": "/pryon-takehome/index.html",
+    "main.9dc5e0a4.css.map": "/pryon-takehome/static/css/main.9dc5e0a4.css.map",
+    "main.1f1efed6.js.map": "/pryon-takehome/static/js/main.1f1efed6.js.map",
+    "787.2d301262.chunk.js.map": "/pryon-takehome/static/js/787.2d301262.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.9dc5e0a4.css",
-    "static/js/main.bf63ac9c.js"
+    "static/js/main.1f1efed6.js"
   ]
 }
