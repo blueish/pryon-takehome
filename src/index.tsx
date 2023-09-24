@@ -1,40 +1,58 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import { RouterProvider, createBrowserRouter, Navigate, createRoutesFromElements, Route } from 'react-router-dom';
 import Login from './pages/login';
 import Astronauts from './pages/astronauts';
 import Profile from './pages/profile';
 import ISSLocation from './pages/iss-location';
+import { AuthContext, AuthProvider } from './contexts/auth';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 
+
+const ProtectedByLogin = ({ children }: { children: JSX.Element }): JSX.Element => {
+  const { user } = useContext(AuthContext);
+  if (!user.name) {
+    return <Navigate to="/login"/>
+  }
+
+  return children
+}
+
+
 const router = createBrowserRouter([
   {
-    path: "/",
-    element: <App />,
-  },
-  {
-    path: "/login",
-    element: <Login />,
-  },
-  {
-    path: "/iss",
-    element: <ISSLocation />,
-  },
-  {
-    path: "/astronauts",
-    element: <Astronauts />,
-  },
-  {
-    path: "/Profile",
-    element: <Profile />,
-  },
-])
+    element: <AuthProvider />,
+    children: [
+      {
+        path: "*",
+        element: <Navigate to="/login" />,
+      },
+      {
+        path: "/login",
+        element: <Login />,
+      },
+      {
+        path: "/iss",
+        element: <ProtectedByLogin><ISSLocation /></ProtectedByLogin>,
+      },
+      {
+        path: "/astronauts",
+        element: <ProtectedByLogin><Astronauts /></ProtectedByLogin>,
+      },
+      {
+        path: "/Profile",
+        element: <ProtectedByLogin><Profile /></ProtectedByLogin>,
+      },
+    ]
+  }
+]
+)
 
 
 root.render(
