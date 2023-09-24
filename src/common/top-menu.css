@@ -1,0 +1,20 @@
+.top-bar {
+    display: flex;
+    padding: 16px;
+    justify-content: center;
+
+    background-color: var(--secondary-color);
+}
+
+.bar-link {
+    margin: 6px;
+}
+
+.bar-link a {
+    color: var(--light-color);
+    text-decoration: none;
+}
+
+.bar-link:last-of-type {
+    margin-left: auto;
+}

@@ -9,6 +9,7 @@ import Astronauts from './pages/astronauts';
 import Profile from './pages/profile';
 import ISSLocation from './pages/iss-location';
 import { AuthContext, AuthProvider } from './contexts/auth';
+import { TopMenu } from './common/top-menu';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -30,29 +31,34 @@ const router = createBrowserRouter([
     element: <AuthProvider />,
     children: [
       {
-        path: "*",
-        element: <Navigate to="/login" />,
-      },
-      {
-        path: "/login",
-        element: <Login />,
-      },
-      {
-        path: "/iss",
-        element: <ProtectedByLogin><ISSLocation /></ProtectedByLogin>,
-      },
-      {
-        path: "/astronauts",
-        element: <ProtectedByLogin><Astronauts /></ProtectedByLogin>,
-      },
-      {
-        path: "/Profile",
-        element: <ProtectedByLogin><Profile /></ProtectedByLogin>,
-      },
+        element: <TopMenu />,
+        children: [
+          {
+            path: "*",
+            element: <Navigate to="/login" />,
+          },
+          {
+            path: "/login",
+            element: <Login />,
+          },
+          {
+            path: "/iss",
+            element: <ProtectedByLogin><ISSLocation /></ProtectedByLogin>,
+          },
+          {
+            path: "/astronauts",
+            element: <ProtectedByLogin><Astronauts /></ProtectedByLogin>,
+          },
+          {
+            path: "/Profile",
+            element: <ProtectedByLogin><Profile /></ProtectedByLogin>,
+          },
+        ]
+      }
+
     ]
   }
-]
-)
+])
 
 
 root.render(
