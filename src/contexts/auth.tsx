@@ -35,7 +35,7 @@ export const  AuthProvider = (): JSX.Element => {
                 setUserData(parsed)
             }
         }
-    }, [user])
+    }, [user, val])
 
     const userLogin = (username: string, password: string): boolean => {
         // This is where we could validate on the backend, but for this demo we can fake it
@@ -54,7 +54,7 @@ export const  AuthProvider = (): JSX.Element => {
     };
 
     const userLogout = () => {
-        // Clearing out user data acts as being logged out - if no name, we'e not logged in
+        // Clearing out user data acts as being logged out - if no name, we're not logged in
         window.localStorage.setItem(USER_LOCALSTORAGE_KEY, "{}")
         setUserData({})
     };

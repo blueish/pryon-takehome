@@ -21,7 +21,7 @@ export default function Astronauts() {
         const fetchData = async () => {
             const data: Response = await fetch(PEOPLE_IN_SPACE_API);
 
-            const { message, number, people } = await data.json();
+            const { number, people } = await data.json();
 
             setAstronauts(people);
             setNumAstronauts(number)

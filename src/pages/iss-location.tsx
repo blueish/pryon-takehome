@@ -25,7 +25,7 @@ export default function ISSLocation() {
         return () => {
             clearInterval(intervalId);
         }
-    }, []);
+    }, [loaded]);
 
     return (
         <div className="location-container">
