@@ -43,7 +43,7 @@ export default function Astronauts() {
                             <div className="astro-craft">Craft</div>
                         </div>
                         {astronauts.map((astronaut: AstronautData) =>
-                            <div className="astro-row">
+                            <div key={astronaut.name} className="astro-row">
                                 <div className="astro-name">{astronaut.name}</div>
                                 <div className="astro-craft">{astronaut.craft}</div>
                             </div>

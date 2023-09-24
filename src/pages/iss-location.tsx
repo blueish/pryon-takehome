@@ -30,20 +30,20 @@ export default function ISSLocation() {
     return (
         <div className="location-container">
             <p>The ISS flies over the earth constantly, making an orbit every 93 minutes. Below is its current location above us!</p>
-            <MapContainer id="map" center={[0, 0]} zoom={2} scrollWheelZoom={false}>
-                <TileLayer
-                    attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-                    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                />
-                {loaded && 
-                    <Marker position={iss} icon={issIcon}>
+            {!loaded ? "Loading..." : 
+                <MapContainer id="map" center={[0, 0]} zoom={2} scrollWheelZoom={false}>
+                    <TileLayer
+                        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                    />
+                    <Marker data-testid="iss" position={iss} icon={issIcon}>
                         <Popup>
                             <p>Latitude: {iss[0]}</p>
                             <p>Longitude: {iss[1]}</p>
                         </Popup>
                     </Marker>
-                }
-            </MapContainer>
+                </MapContainer>
+            }
         </div>
     )
 }
