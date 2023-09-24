@@ -1,9 +1,11 @@
 #map {
     height: 350px;
+    width: 80%;
 }
 
-.iss-icon {
-    width: 12px;
-    height: 12px;
-    background-color: blue;
+.location-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
